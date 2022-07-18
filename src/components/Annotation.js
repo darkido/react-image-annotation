@@ -262,6 +262,8 @@ export default compose(
           src={props.src}
           draggable={false}
           ref={this.setref}
+          onLoad={props.onLoad}
+
         />
         <Items>
           {props.annotations.map(annotation => (

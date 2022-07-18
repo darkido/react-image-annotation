@@ -163,14 +163,18 @@ export default class Custom extends Component {
   }
 
   render () {
+    const onImgLoad = ({ target: img }) => {
+      const { offsetHeight, offsetWidth } = img;
+      console.log(offsetHeight, offsetWidth);
+    };
+  
     return (
       <div>
         <Annotation
           src={img}
           alt='Two pebbles anthropomorphized holding hands'
-
+          onLoad={onImgLoad}
           annotations={this.state.annotations}
-
           type={this.state.type}
           value={this.state.annotation}
           onChange={this.onChange}
