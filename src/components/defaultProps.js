@@ -15,7 +15,7 @@ import {
 } from '../selectors'
 
 export default {
-  innerRef: () => {},
+  ref: () => {},
   onChange: () => {},
   onSubmit: () => {},
   type: RectangleSelector.TYPE,

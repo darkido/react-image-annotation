@@ -38,7 +38,7 @@ export default compose(
   withRelativeMousePos()
 )(class Annotation extends Component {
   static propTypes = {
-    innerRef: T.func,
+    ref: T.func,
     onMouseUp: T.func,
     onMouseDown: T.func,
     onMouseMove: T.func,
@@ -125,10 +125,10 @@ export default compose(
     }
   }
 
-  setInnerRef = (el) => {
+  setref = (el) => {
     this.container = el
-    this.props.relativeMousePos.innerRef(el)
-    this.props.innerRef(el)
+    this.props.relativeMousePos.ref(el)
+    this.props.ref(el)
   }
 
   getSelectorByType = (type) => {
@@ -250,7 +250,7 @@ export default compose(
     return (
       <Container
         style={props.style}
-        innerRef={isMouseHovering.innerRef}
+        ref={isMouseHovering.ref}
         onMouseLeave={this.onTargetMouseLeave}
         onTouchCancel={this.onTargetTouchLeave}
         allowTouch={allowTouch}
@@ -261,7 +261,7 @@ export default compose(
           alt={props.alt}
           src={props.src}
           draggable={false}
-          innerRef={this.setInnerRef}
+          ref={this.setref}
         />
         <Items>
           {props.annotations.map(annotation => (
@@ -282,7 +282,7 @@ export default compose(
           }
         </Items>
         <Target
-          innerRef={this.targetRef}
+          ref={this.targetRef}
           onClick={this.onClick}
           onMouseUp={this.onMouseUp}
           onMouseDown={this.onMouseDown}

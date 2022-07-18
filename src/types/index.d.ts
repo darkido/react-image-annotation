@@ -38,7 +38,7 @@ declare module "react-image-annotation" {
   interface IAnnotationProps {
     src: string;
     alt?: string;
-    innerRef?: (e: any) => any;
+    ref?: (e: any) => any;
     onMouseUp?: (e: React.MouseEvent) => any;
     onMouseDown?: (e: React.MouseEvent) => any;
     onMouseMove?: (e: React.MouseEvent) => any;

@@ -5,7 +5,7 @@ const withRelativeMousePos = (key = 'relativeMousePos') => DecoratedComponent =>
   class WithRelativeMousePos extends Component {
     state = { x: null, y: null }
 
-    innerRef = el => {
+    ref = el => {
       this.container = el
     }
 
@@ -37,7 +37,7 @@ const withRelativeMousePos = (key = 'relativeMousePos') => DecoratedComponent =>
     render () {
       const hocProps = {
         [key]: {
-          innerRef: this.innerRef,
+          ref: this.ref,
           onMouseMove: this.onMouseMove,
           onMouseLeave: this.onMouseLeave,
           onTouchMove: this.onTouchMove,
