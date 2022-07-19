@@ -270,7 +270,8 @@ export default compose(
             renderHighlight({
               key: annotation.data.id,
               annotation,
-              active: this.shouldAnnotationBeActive(annotation, topAnnotationAtMouse)
+              active: this.shouldAnnotationBeActive(annotation, topAnnotationAtMouse),
+              highlightColor: props.highlightColor
             })
           ))}
           {!props.disableSelector
