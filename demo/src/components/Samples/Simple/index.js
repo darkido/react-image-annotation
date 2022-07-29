@@ -21,6 +21,7 @@ export default class Simple extends Component {
       annotation: {},
       annotations: this.state.annotations.concat({
         geometry,
+        isActive:true,
         data: {
           ...data,
           id: Math.random()

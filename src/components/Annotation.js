@@ -216,6 +216,7 @@ export default compose(
   }
 
   shouldAnnotationBeActive = (annotation, top) => {
+    if(annotation.isActive) return true;
     if (this.props.activeAnnotations) {
       const isActive = !!this.props.activeAnnotations.find(active => (
         this.props.activeAnnotationComparator(annotation, active)
